@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>主页面</title>
+    <!-- <link rel="import" href="./child.html" id="child"> -->
+</head>
+<body>
+    <div style="width:200px; float:left; margin-right:200px; border:solid 1px #333;">
+        <div id="color">
+            frame color
+        </div>
+    </div>
+    <div>
+        <iframe id="child" src="./child.html"></iframe>
+    </div>
+    <script>
+        window.addEventListener('message',function(e){
+            var color = e.data;
+            document.getElementById('color').style.backgroundColor = color;
+        }, false);
+    </script>
+</body>
+</html>
